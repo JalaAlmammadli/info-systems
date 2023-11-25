@@ -1,10 +1,24 @@
-
 body {
     text-align: center;
     margin: 20px;
     background-color: #f9f6b9;
     font-family: 'Courier New', monospace;
 }
+.heart {
+    width: 19px;
+    height: 14px;
+    background-color: #ff0000;
+    position: absolute;
+    animation: beat 1s infinite alternate;
+}
+
+.heart.left1 { top: 20px; left: 20px; }
+.heart.left2 { top: 50px; left: 20px; }
+.heart.left3 { top: 80px; left: 20px; }
+.heart.right1 { top: 20px; right: 20px; }
+.heart.right2 { top: 50px; right: 20px; }
+.heart.right3 { top: 80px; right: 20px; }
+
 
 h1 {
     background-color: #87CEFA;
@@ -12,7 +26,18 @@ h1 {
     color: #333;
     animation: fadeIn 1s ease-in-out;
     font-size: 40px;
+    position: relative;
 }
+
+
+.member-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    opacity: 0;
+    animation: revealMembers 1s forwards;
+}
+
 
 .member-boxes {
     display: flex;
@@ -33,7 +58,7 @@ h1 {
     background-color: #fff;
     box-sizing: border-box;
     transition: transform 0.5s;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 .member h2 {
@@ -48,11 +73,10 @@ h1 {
     object-fit: cover;
     width: 200px;
     height: 200px;
-    
 }
 
 .member-button {
-    border-radius: 20px; 
+    border-radius: 20px;
     padding: 10px 20px;
     background-color: #0077cc;
     color: #fff;
@@ -63,13 +87,13 @@ h1 {
 }
 
 .member-button:hover {
-    background-color: #005580; 
+    background-color: #005580;
 }
-
 
 .footer {
     margin-top: 50px;
 }
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -78,13 +102,12 @@ h1 {
         opacity: 1;
     }
 }
+
 @keyframes revealMembers {
     to {
         opacity: 1;
     }
-
 }
-
 
 .member:nth-child(1) {
     animation: slideFromRight 0.8s ease-in-out 0.4s forwards;
@@ -109,5 +132,11 @@ h1 {
     }
     to {
         transform: translateX(0);
+    }
+}
+
+@keyframes beat {
+    to {
+        transform: scale(1.1);
     }
 }
