@@ -4,21 +4,6 @@ body {
     background-color: #f9f6b9;
     font-family: 'Courier New', monospace;
 }
-.heart {
-    width: 19px;
-    height: 14px;
-    background-color: #ff0000;
-    position: absolute;
-    animation: beat 1s infinite alternate;
-}
-
-.heart.left1 { top: 20px; left: 20px; }
-.heart.left2 { top: 50px; left: 20px; }
-.heart.left3 { top: 80px; left: 20px; }
-.heart.right1 { top: 20px; right: 20px; }
-.heart.right2 { top: 50px; right: 20px; }
-.heart.right3 { top: 80px; right: 20px; }
-
 
 h1 {
     background-color: #87CEFA;
@@ -29,15 +14,35 @@ h1 {
     position: relative;
 }
 
-
-.member-boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    opacity: 0;
-    animation: revealMembers 1s forwards;
+.heart {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    animation: beat 1s infinite alternate;
 }
 
+.heart::before,
+.heart::after {
+    content: '\2764';
+    font-size: 40px;
+    position: absolute;
+    color: #ff0000;
+}
+
+.heart::before {
+    left: 0;
+}
+
+.heart::after {
+    left: 8px;
+}
+
+.heart.left1 { top: 20px; left: 20px; }
+.heart.left2 { top: 50px; left: 20px; }
+.heart.left3 { top: 80px; left: 20px; }
+.heart.right1 { top: 20px; right: 20px; }
+.heart.right2 { top: 50px; right: 20px; }
+.heart.right3 { top: 80px; right: 20px; }
 
 .member-boxes {
     display: flex;
@@ -109,6 +114,12 @@ h1 {
     }
 }
 
+@keyframes beat {
+    to {
+        transform: scale(1.1);
+    }
+}
+
 .member:nth-child(1) {
     animation: slideFromRight 0.8s ease-in-out 0.4s forwards;
 }
@@ -132,11 +143,5 @@ h1 {
     }
     to {
         transform: translateX(0);
-    }
-}
-
-@keyframes beat {
-    to {
-        transform: scale(1.1);
     }
 }
