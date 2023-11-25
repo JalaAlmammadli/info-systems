@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Website Introduction</title>
+</head>
+
+<body>
+    <div id="left-menu">
+        <a href="#">Introduction</a>
+        <a href="#">About us</a>
+        <a href="#">Hour of Code</a>
+        <a href="#">Our Website</a>
+    </div>
+
+    <main>
+        <header>
+            <h1>Website Introduction</h1>
+        </header>
+
+        <section>
+            <h2>ADA University SITE TEAM</h2>
+        </section>
+
+        <footer>
+            &copy; 2023 ADA University
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
