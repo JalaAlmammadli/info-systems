@@ -1,0 +1,113 @@
+
+body {
+    text-align: center;
+    margin: 20px;
+    background-color: #f9f6b9;
+    font-family: 'Courier New', monospace;
+}
+
+h1 {
+    background-color: #87CEFA;
+    padding: 40px;
+    color: #333;
+    animation: fadeIn 1s ease-in-out;
+    font-size: 40px;
+}
+
+.member-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    opacity: 0;
+    animation: revealMembers 1s forwards;
+}
+
+.member {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 1000px;
+    height: 300px;
+    text-align: left;
+    background-color: #fff;
+    box-sizing: border-box;
+    transition: transform 0.5s;
+    overflow: hidden; 
+}
+
+.member h2 {
+    font-family: 'Courier New', monospace;
+    color: #0077cc;
+}
+
+.member img {
+    float: right;
+    margin-left: 10px;
+    border-radius: 100%;
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    
+}
+
+.member-button {
+    border-radius: 20px; /* Adjust the value to control the roundness */
+    padding: 10px 20px;
+    background-color: #0077cc;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.member-button:hover {
+    background-color: #005580; /* Change the color on hover */
+}
+
+
+.footer {
+    margin-top: 50px;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes revealMembers {
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+.member:nth-child(1) {
+    animation: slideFromRight 0.8s ease-in-out 0.4s forwards;
+}
+
+.member:nth-child(2) {
+    animation: slideFromLeft 0.8s ease-in-out 0.6s forwards;
+}
+
+@keyframes slideFromRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
